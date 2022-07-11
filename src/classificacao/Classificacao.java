@@ -247,25 +247,25 @@ public class Classificacao {
     }
 
     public static void print(int v[]) {
-        //System.out.print("[ ");
+        System.out.print("[ ");
         
-        //for (int i : v) {
-        //    System.out.print(i + " ");
-        //}
+        for (int i : v) {
+           System.out.print(i + " ");
+        }
 
-        //System.out.println("]");
+        System.out.println("]");
     }
 
-    public static void main(String[] args) {
-        int avg[] = averagecase(50);
-        print(avg);
+    // public static void main(String[] args) {
+    //     int avg[] = averagecase(50);
+    //     print(avg);
 
-        print(bubblesort1(avg));
+    //     print(bubblesort1(avg));
 
-        int worst[] = worstcase(50);
-        print(worst);
+    //     int worst[] = worstcase(50);
+    //     print(worst);
 
-        print(bubblesort1(worst));
-    }
+    //     print(bubblesort1(worst));
+    // }
 }
 

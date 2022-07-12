@@ -2,41 +2,20 @@ package testeCases;
 
 import classificacao.CriaVetor;
 
-public class HeapSortTestCase {
+public class QuickSortTestCase {
     static int count = 0;
 
-    public static void heapsort(int v[]) {
+    public static void quicksort(int v[]) {
         count = 0;
-
-        for (int i = v.length / 2 - 1; i >= 0; i--) {
-            heapify(v, v.length, i);
-        }
-    
-        for (int i = v.length - 1; i > 0; i--) {
-            swap(v, 0, i); 
-            
-            heapify(v, i, 0);
-        }
+        quicksort(v,  0, v.length - 1);
     }
 
-    public static void heapify(int v[], int n, int i) {
-        int raiz = i;
-        
-        int esquerda = 2 * i + 1;
-        int direita = 2 * i + 2;
-    
-        if (esquerda < n && v[esquerda] > v[raiz]) {    
-            raiz = esquerda;
-        }
-    
-        if (direita < n && v[direita] > v[raiz]) {
-            raiz = direita;
-        }
-    
-        count++;
-        if (raiz != i) {
-            swap(v, i, raiz);
-            heapify(v, n, raiz);
+    public static void quicksort(int v[], int inicio, int fim) {
+        if (inicio < fim) {
+            int meio = partition(v, inicio, fim);
+            
+            quicksort(v, inicio, meio - 1);
+            quicksort(v, meio + 1, fim);
         }
     }
 
@@ -46,13 +25,31 @@ public class HeapSortTestCase {
             v[i] = aux;
     }
 
+    public static int partition(int v[], int inicio, int fim) {
+       int pivo = v[fim];      
+       int i = (inicio - 1);
+   
+       for (int j = inicio; j <= fim - 1; j++) {
+            count++;
+           if (v[j] < pivo) {
+               i++;
+               
+               swap(v, i, j);
+           }
+       }
+
+       swap(v, i + 1, fim);
+       
+       return i + 1;
+   }
+
     public static void piorCaso() {
         int vetor[];
 
-        System.out.println("HeapSort - Array Decrescente");
+        System.out.println("QuickSort - Array Decrescente:");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             vetor = CriaVetor.criaVetorDecrescente(tamanhoVetor);
-            heapsort(vetor);
+            quicksort(vetor);
             System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + count);
         }
     }
@@ -62,14 +59,14 @@ public class HeapSortTestCase {
         long somaOperacoes;
         int vetor[];
 
-        System.out.println("HeapSort - Array Aleatório");
+        System.out.println("QuickSort - Array Aleatório:");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             media = 0;
             somaOperacoes = 0;
 
             for (int execucoes = 1; execucoes <= 10; execucoes++) {
                 vetor = CriaVetor.criaVetorAleatorio(tamanhoVetor);
-                heapsort(vetor);
+                quicksort(vetor);
                 somaOperacoes += count;
             }
 

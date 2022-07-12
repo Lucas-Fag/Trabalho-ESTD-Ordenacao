@@ -27,10 +27,11 @@ public class InsertionSortTestCase {
     public static void piorCaso() {
         int vetor[];
 
+        System.out.println("InsertionSort - Array Decrescente");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             vetor = CriaVetor.criaVetorDecrescente(tamanhoVetor);
             insertionsort(vetor);
-            System.out.println("InsertionSort_PiorCaso_Tamanho_" + tamanhoVetor + "_MédiaDeOperações_" + count);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + count);
         }
     }
 
@@ -39,6 +40,7 @@ public class InsertionSortTestCase {
         long somaOperacoes;
         int vetor[];
 
+        System.out.println("InsertionSort - Array Aleatório");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             media = 0;
             somaOperacoes = 0;
@@ -50,7 +52,7 @@ public class InsertionSortTestCase {
             }
 
             media = somaOperacoes / 10;
-            System.out.println("InsertionSort_CasoMedio_Tamanho_" + tamanhoVetor + "_MédiaDeOperações_" + media);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + media);
         }
     }
     

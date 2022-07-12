@@ -22,11 +22,22 @@ public class BubbleSortTestCase {
         return v;
     }
     
+    public static void piorCaso() {
+        int vetor[];
+        System.out.println("BubbleSort1 - Array Decrescente");
+        for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
+            vetor = CriaVetor.criaVetorDecrescente(tamanhoVetor);
+            bubblesort1(vetor);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + count);
+        }
+    }
+
     public static void casoMedio() {
         long media;
         long somaOperacoes;
         int vetor[];
 
+        System.out.println("BubbleSort1 - Array Aleatório");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             media = 0;
             somaOperacoes = 0;
@@ -40,17 +51,7 @@ public class BubbleSortTestCase {
             }
 
             media = somaOperacoes / 10;
-            System.out.println("BubbleSort1_CasoMedio_Tamanho_" + tamanhoVetor + "_MédiaDeOperações_" + media);
-        }
-    }
-
-    public static void piorCaso() {
-        int vetor[];
-
-        for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
-            vetor = CriaVetor.criaVetorDecrescente(tamanhoVetor);
-            bubblesort1(vetor);
-            System.out.println("BubbleSort1_PiorCaso_Tamanho_" + tamanhoVetor + "_MédiaDeOperações_" + count);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + media);
         }
     }
     

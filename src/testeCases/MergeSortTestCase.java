@@ -6,6 +6,7 @@ public class MergeSortTestCase {
     static int count = 0;
     
     public static void mergesort(int v[]) {
+        count = 0;
         mergesort(v, 0, v.length - 1);
     }
 
@@ -40,7 +41,6 @@ public class MergeSortTestCase {
         }
         
         for (i = inicio, k = 0; i <= fim; i++, k++) {
-            count++;
             v[i] = aux[k];
         }
     }
@@ -48,10 +48,11 @@ public class MergeSortTestCase {
     public static void piorCaso() {
         int vetor[];
 
+        System.out.println("MergeSort - Array Decrescente");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             vetor = CriaVetor.criaVetorDecrescente(tamanhoVetor);
             mergesort(vetor);
-            System.out.println("MergeSort_PiorCaso_Tamanho_" + tamanhoVetor + "_MédiaDeOperações_" + count);
+            System.out.println("Tamanho: " + tamanhoVetor + "| Média de Operações: " + count);
         }
     }
 
@@ -60,6 +61,7 @@ public class MergeSortTestCase {
         long somaOperacoes;
         int vetor[];
 
+        System.out.println("MergeSorte - Array Aleatório");
         for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
             media = 0;
             somaOperacoes = 0;
@@ -71,7 +73,7 @@ public class MergeSortTestCase {
             }
 
             media = somaOperacoes / 10;
-            System.out.println("MergeSort_CasoMedio_Tamanho_" + tamanhoVetor + "_MédiaDeOperações_" + media);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + media);
         }
     }
 

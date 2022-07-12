@@ -2,6 +2,7 @@ import testeCases.BubbleSortTestCase;
 import testeCases.HeapSortTestCase;
 import testeCases.InsertionSortTestCase;
 import testeCases.MergeSortTestCase;
+import testeCases.QuickSortTestCase;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,7 +12,9 @@ public class App {
         // InsertionSortTestCase.casoMedio();
         // HeapSortTestCase.piorCaso();
         // HeapSortTestCase.casoMedio();
-        MergeSortTestCase.piorCaso();
-        
+        // MergeSortTestCase.piorCaso();
+        // MergeSortTestCase.casoMedio();
+        // QuickSortTestCase.piorCaso();
+        // QuickSortTestCase.casoMedio();
     }
 }

@@ -24,6 +24,17 @@ public class InsertionSortTestCase {
         return v;
     }
 
+    public static void melhorCaso() {
+        int vetor[];
+        
+        System.out.println("InsertionSort - Array Crescente");
+        for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
+            vetor = CriaVetor.criaVetorCrescente(tamanhoVetor);
+            insertionsort(vetor);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + count);
+        }
+    }
+
     public static void piorCaso() {
         int vetor[];
 

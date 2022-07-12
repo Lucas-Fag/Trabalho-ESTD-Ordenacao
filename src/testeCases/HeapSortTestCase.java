@@ -46,6 +46,17 @@ public class HeapSortTestCase {
             v[i] = aux;
     }
 
+    public static void melhorCaso() {
+        int vetor[];
+        
+        System.out.println("HeapSort - Array Crescente");
+        for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
+            vetor = CriaVetor.criaVetorCrescente(tamanhoVetor);
+            heapsort(vetor);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + count);
+        }
+    }
+
     public static void piorCaso() {
         int vetor[];
 

@@ -45,6 +45,17 @@ public class MergeSortTestCase {
         }
     }
 
+    public static void melhorCaso() {
+        int vetor[];
+        
+        System.out.println("MergeSort - Array Crescente");
+        for (int tamanhoVetor = 1; tamanhoVetor <= 1000; tamanhoVetor++) {
+            vetor = CriaVetor.criaVetorCrescente(tamanhoVetor);
+            mergesort(vetor);
+            System.out.println("Tamanho: " + tamanhoVetor + " | Média de Operações: " + count);
+        }
+    }
+
     public static void piorCaso() {
         int vetor[];
 
